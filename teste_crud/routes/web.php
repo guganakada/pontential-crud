@@ -11,6 +11,22 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('desenvolvedores');
 });
+
+Route::get('/developers', 'DesenvolvedorController@index');
+
+Route::get('/developers?={search}', 'DesenvolvedorController@searchDevelopers');
+
+Route::get('/developers/{id}', 'DesenvolvedorController@getDeveloper');
+
+Route::post('/developers', 'DesenvolvedorController@store');
+
+Route::put('/developers/{id}', 'DesenvolvedorController@update');
+
+Route::delete('/developers/{id}', 'DesenvolvedorController@destroy');
