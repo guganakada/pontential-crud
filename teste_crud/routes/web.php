@@ -15,9 +15,9 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('desenvolvedores');
-});
+Route::get('/', 'AppController@index');
+
+Route::resource('/dev', 'AppController');
 
 Route::get('/developers', 'DesenvolvedorController@index');
 
